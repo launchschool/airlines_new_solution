@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Table = ({
   columns = [{ name: "header", property: "value" }],
@@ -18,10 +18,6 @@ const Table = ({
     event.preventDefault();
     setPage(page - 1);
   };
-
-  useEffect(() => {
-    setPage(0);
-  }, []);
 
   const headerCells = columns.map((col) => {
     return <th key={col.name}>{col.name}</th>;
